@@ -37,3 +37,13 @@ $ bundle install --path vendor/bundle
 $ brew install mysql
 $ mysql.sever start
 ```
+
+# コードチェッカ
+
+プルリクを出す前に下記のコマンドを実行し、コーディング規約に反していない事を確認して下さい。
+
+- rubocop->rubyファイルのコードチェッカ コーディング規約とチェック対象となるファイルの指定情報は、.rubocop.ymlに記述
+
+  ```shell
+  $ bundle exec rubocop
+  ```
