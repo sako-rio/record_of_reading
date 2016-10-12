@@ -1,0 +1,5 @@
+rnters:
+  LineLength:
+    max: 120
+  ClassesBeforeIds:
+    EnforcedStyle:
