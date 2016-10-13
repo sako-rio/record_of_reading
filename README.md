@@ -45,6 +45,11 @@ $ mysql.sever start
     ```shell
     $ bundle exec rake db:create
     ```
+  2. テーブル作成
+
+    ```shell
+    $ bundle exec rake db:migrate
+    ```
 
 ## コードチェッカ
 
@@ -55,3 +60,16 @@ $ mysql.sever start
   ```shell
   $ bundle exec rubocop
   ```
+- haml-lint->hamlファイルのコードチェッカ
+
+  - views以下のhamlファイルをチェック
+
+    ```shell
+    $ bundle exec haml-lint app/views/**/*.haml
+    ```
+
+  - 特定のhamlファイルをチェック
+
+    ```shell
+    $ bundle exec haml-lint app/views/records/index.html.haml
+    ```
