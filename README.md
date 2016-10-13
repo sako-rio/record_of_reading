@@ -38,7 +38,15 @@ $ brew install mysql
 $ mysql.sever start
 ```
 
-# コードチェッカ
+## データベースの作成手順
+
+  1. データベース作成
+
+    ```shell
+    $ bundle exec rake db:create
+    ```
+
+## コードチェッカ
 
 プルリクを出す前に下記のコマンドを実行し、コーディング規約に反していない事を確認して下さい。
 
