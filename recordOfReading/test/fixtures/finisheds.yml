@@ -4,12 +4,12 @@ one:
   name: MyString
   type: 
   author: MyString
-  purchase_date: 2016-10-14
-  goal: 2016-10-14
+  evaluation: 
+  comment: MyString
 
 two:
   name: MyString
   type: 
   author: MyString
-  purchase_date: 2016-10-14
-  goal: 2016-10-14
+  evaluation: 
+  comment: MyString

@@ -7,6 +7,7 @@ AllCops:
     - "db/migrate/*"
     - "config/**/*"
     - "lib/templates/**/*"
+    - "test/**/*"
   UseCache: false
   TargetRubyVersion: 2.3
 Metrics/LineLength:
