@@ -11,19 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014013237) do
-
-  create_table "concerns", force: :cascade do |t|
-    t.integer  "book_id",    limit: 4,   null: false
-    t.string   "name",       limit: 255
-    t.string   "type",       limit: 255
-    t.string   "author",     limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
+ActiveRecord::Schema.define(version: 20161014045557) do
 
   create_table "finisheds", force: :cascade do |t|
-    t.integer  "book_id",    limit: 4,   null: false
+    t.integer  "shelf_id",   limit: 4,   null: false
     t.string   "name",       limit: 255
     t.string   "type",       limit: 255
     t.string   "author",     limit: 255
@@ -33,8 +24,17 @@ ActiveRecord::Schema.define(version: 20161014013237) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "purchase_plans", force: :cascade do |t|
+    t.integer  "shelf_id",   limit: 4,   null: false
+    t.string   "name",       limit: 255
+    t.string   "type",       limit: 255
+    t.string   "author",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "unreads", force: :cascade do |t|
-    t.integer  "book_id",       limit: 4,   null: false
+    t.integer  "shelf_id",      limit: 4,   null: false
     t.string   "name",          limit: 255
     t.string   "type",          limit: 255
     t.string   "author",        limit: 255
@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20161014013237) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer  "book_id",    limit: 4,   null: false
     t.string   "name",       limit: 255
     t.string   "maile",      limit: 255
+    t.integer  "shelf_id",   limit: 4,   null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
