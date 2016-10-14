@@ -1,12 +1,17 @@
 #  user,unread,finished,purchase_planテーブルのテストデータを作成するファイル
 
-#  memberテーブルの登録処理
-#  member Hash型 値name,nickname,email,birth_date,sex,reading,status
+def addBookshelfs
+  users = User.all
+  users.each do |user|
+  end
+end
+#  userテーブルの登録処理
+#  user Hash型 値shelf_id, name, email
 def addUser(user)
   User.create(book_id: user[:book_id], name: user[:name], maile: user[:maile])
 end
 
-#  member情報を作成する
+#  user情報を作成する
 #  number string型 数字
 def createUser(number)
   rand_number = rand(0..100)
@@ -15,6 +20,7 @@ def createUser(number)
   return user
 end
 
+#  usersテーブルにデータを入れる
 def addUsres
   0.upto(10) do |number|
     number = (number + 1).to_s
@@ -30,6 +36,7 @@ namespace :db do
     system( "bundle exec rake db:reset" )
     puts "新規データを追加中"
     addUsres
+    addBookshelfs
     puts "完了"
   end
 end
