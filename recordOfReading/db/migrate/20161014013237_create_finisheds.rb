@@ -1,7 +1,7 @@
 class CreateFinisheds < ActiveRecord::Migration
   def change
     create_table :finisheds do |t|
-      t.integer :book_id, null: false
+      t.integer :shelf_id, null: false
       t.string :name
       t.string :type
       t.string :author

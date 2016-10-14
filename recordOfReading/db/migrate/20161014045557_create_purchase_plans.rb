@@ -1,12 +1,10 @@
-class CreateUnreads < ActiveRecord::Migration
+class CreatePurchasePlans < ActiveRecord::Migration
   def change
-    create_table :unreads do |t|
+    create_table :purchase_plans do |t|
       t.integer :shelf_id, null: false
       t.string :name
       t.string :type
       t.string :author
-      t.date :purchase_date
-      t.date :goal
 
       t.timestamps null: false
     end
