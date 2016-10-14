@@ -50,6 +50,11 @@ $ mysql.sever start
     ```shell
     $ bundle exec rake db:migrate
     ```
+  3. テストデータの投入
+
+    ```shell
+    $ bundle exec rake db:testdata
+    ```
 
 ## コードチェッカ
 
