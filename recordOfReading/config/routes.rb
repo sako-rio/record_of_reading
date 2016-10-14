@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
   get 'users/index'
 
   get 'users/show'
+
+  get 'unreads/index'
+
+  get 'unreads/show'
 
   get 'finished/index'
 
