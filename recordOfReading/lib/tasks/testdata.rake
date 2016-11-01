@@ -1,30 +1,38 @@
 #  user,unread,finished,purchase_planテーブルのテストデータを作成するファイル
+def create_bookshelf(number)
+  rand_number = rand(0..100)
+  name = 'member' + number
+  user = { book_id: rand_number, name: name, maile: name + '@gmaile.com' }
+  user
+end
 
-def addBookshelfs
+def add_bookshelfs
   users = User.all
   users.each do |user|
+    user = createBookshelf(number)
+    addUser(user)
   end
 end
 #  userテーブルの登録処理
 #  user Hash型 値shelf_id, name, email
-def addUser(user)
+
+def add_user(user)
   User.create(book_id: user[:book_id], name: user[:name], maile: user[:maile])
 end
 
 #  user情報を作成する
 #  number string型 数字
-def createUser(number)
+def create_user(number)
   rand_number = rand(0..100)
   name = 'member' + number
-  user = {book_id: rand_number, name: name, maile: name + '@gmaile.com'}
-  return user
+  user = { book_id: rand_number, name: name, maile: name + '@gmaile.com' }
+  user
 end
 
 #  usersテーブルにデータを入れる
-def addUsres
+def add_usres
   0.upto(10) do |number|
-    number = (number + 1).to_s
-    user = createUser(number)
+    user = create_user((number + 1).to_s)
     addUser(user)
   end
 end
@@ -33,10 +41,10 @@ namespace :db do
   task testdata: :environment do
     puts "データを初期化中"
     #  既存のデータをリセット
-    system( "bundle exec rake db:reset" )
+    system("bundle exec rake db:reset")
     puts "新規データを追加中"
-    addUsres
-    addBookshelfs
+    add_usres
+    add_bookshelfs
     puts "完了"
   end
 end
